@@ -13,7 +13,7 @@ $purple="\033[1;35m";
 $red="\033[1;31m";
 $yellow="\033[1;33m";
 
-$dbgtmr = "1"; #Intervall of showing the current speed + lastpassword in seconds.
+$dbgtmr = "1";
 
 if ($dbgtmr<=0){ die "Set dbgtmr to a value >=1 !\n";};
 use Digest::MD5 qw(md5_hex);
@@ -62,7 +62,7 @@ print "$cyan
  | | | |  |  |_  |  | __ -|  _| | |  _|  _|
  |_|_|_|____/|___|  |_____|_| |___|_| |_|  
                                           
-$white ========================[$yellow Ver.1.5$white ]=======
+$white ========================[$yellow Ver.2.0$white ]=======
 
 $okegreen By$red  :$white N1ght.Hax0r
 $okegreen Git$red :$white https://github.com/N1ght420
@@ -84,6 +84,8 @@ die;
 }
 
 sub crack{
+######################################## Slow Crack With Color ########################################
+
  $CharSet = shift;
  @RawString = ();
  for (my $i =0;$i<$CharSet;$i++){ $RawString[i] = 0;}
@@ -100,7 +102,7 @@ sub crack{
    $RawString[$i]=0;
    }
   }
-###################################################
+
    $ret = "";
    for (my $i =0;$i<$CharSet;$i++){ $ret = $ret . substr($alpha,$RawString[$i],1);}
    $hash = md5_hex($ret);
@@ -116,11 +118,51 @@ sub crack{
    if ($ARGV[3] eq $hash){
     die "\n$okegreen Password$red >$white $ret\n";
    }
-###################################################
-  #checkhash($CharSet)."\n";
 
   $RawString[0]++;
  }while($RawString[$CharSet-1]<length($alpha));
+
+######################################## Slow Crack With Color ########################################
+
+######################################### Fast Crack No Color #########################################
+#
+# $CharSet = shift;
+# @RawString = ();
+# for (my $i =0;$i<$CharSet;$i++){ $RawString[i] = 0;}
+# $Start = gettimeofday();
+# do{
+#  for (my $i =0;$i<$CharSet;$i++){
+#   if ($RawString[$i] > length($alpha)-1){
+#    if ($i==$CharSet-1){
+#    print "$okegreen Bruteforcing done with$white  $CharSet $okegreen Chars. $red No Results.\n";
+#    $cnt=0;
+#    return false;
+#   }
+#   $RawString[$i+1]++;
+#   $RawString[$i]=0;
+#   }
+#  }
+#
+#   $ret = "";
+#   for (my $i =0;$i<$CharSet;$i++){ $ret = $ret . substr($alpha,$RawString[$i],1);}
+#   $hash = md5_hex($ret);
+#   $cnt++;
+#   $Stop = gettimeofday();
+#   if ($Stop-$Start>$dbgtmr){
+#    $cnt = int($cnt/$dbgtmr);
+#    print "$cnt hashes\\second.\tLast Pass '$ret\'\n";
+#    $cnt=0;
+#    $Start = gettimeofday();
+#   }
+#            print " $hash [  $ret  ]\n";
+#   if ($ARGV[3] eq $hash){
+#    die "\n$okegreen Password$red >$white $ret\n";
+#   }
+#
+#  $RawString[0]++;
+# }while($RawString[$CharSet-1]<length($alpha));
+#
+######################################### Fast Crack No Color #########################################
 }
 
 sub checkhash{
