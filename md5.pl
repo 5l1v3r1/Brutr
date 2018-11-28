@@ -37,12 +37,12 @@ print "$cyan
  | | | |  |  |_  |  | __ -|  _| | |  _|  _|
  |_|_|_|____/|___|  |_____|_| |___|_| |_|  
                                           
-$white ========================[$yellow Ver.1.5$white ]=======
+$white ========================[$yellow Ver.1.5$white ]========
 
 $okegreen By$red  :$white N1ght.Hax0r
 $okegreen Git$red :$white https://github.com/N1ght420
 
-$white ===========[$yellow IT Sharing Group$white ]===========
+$white ===========[$yellow Code Your Freedom$white ]===========
 
 $okegreen Charset$red :$white '$alpha\'
 $okegreen Hash$red    :$white '$ARGV[3]'
@@ -62,12 +62,12 @@ print "$cyan
  | | | |  |  |_  |  | __ -|  _| | |  _|  _|
  |_|_|_|____/|___|  |_____|_| |___|_| |_|  
                                           
-$white ========================[$yellow Ver.2.0$white ]=======
+$white ========================[$yellow Ver.2.0$white ]========
 
 $okegreen By$red  :$white N1ght.Hax0r
 $okegreen Git$red :$white https://github.com/N1ght420
 
-$white ===========[$yellow IT Sharing Group$white ]===========
+$white ===========[$yellow Code Your Freedom$white ]===========
 
 $okegreen Charset$red :$white aA0!
 $white ~$okegreen   a$red   :$white abcdefghijklmnopqrstuvwxyz
@@ -183,4 +183,4 @@ sub checkhash{
   die "\n$okegreen Password$red >$white $ret\n";
  }
  
-} 
+}
